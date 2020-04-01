@@ -24,11 +24,6 @@ const Home = props => {
         <title>The News Loader</title>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet" />
       </Head>
-      <style global jsx>{`
-       body {
-         font-family: 'Lato', sans-serif;
-       }
-       `}</style>
 
       <SearchBar searchNews={handleNewsSearch} />
 
