@@ -1,52 +1,52 @@
 .articles-container {
   list-style-type: none;
+}
 
+.article-item {
+  cursor: pointer;
+  display: flex;
+  padding: 6px 0;
+}
 
-  .article-item {
-    display: flex;
-    padding: 6px 0;
-  }
+.url-container {
+  flex: 1;
+}
 
-  .url-container {
-    flex: 1;
-  }
+.url-container img {
+  max-width: 100%;
+  height: auto;
+  width: 60%;
+}
 
-  .url-container img {
-    max-width: 100%;
-    height: auto;
-    width: 60%;
-  }
+.article-text {
+  flex: 2;
+  padding: 6px 18px 6px 0;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, .09);
+}
 
-  .article-text {
-    flex: 2;
-    padding: 6px 18px 6px 0;
-    margin-right: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-bottom: 1px solid rgba(0, 0, 0, .09);
-  }
+.article-title {
+  font-size: 1.1rem;
+}
 
-  .article-title {
-    font-size: 1.1rem;
-  }
+.article-details {
+  color: #737373;
+  font-size: 0.85rem;
+}
 
-  .article-details {
-    color: #737373;
-    font-size: 0.85rem;
-  }
+.article-details span {
+  padding: 0 6px;
+}
 
-  .article-details span {
-    padding: 0 6px;
-  }
+.article-link {
+  color: black;
+  text-decoration: none;
+}
 
-  .article-link {
-    color: black;
-    text-decoration: none;
-  }
-
-  .article-link:hover {
-    text-decoration: underline;
-    color: red;
-  }
+.article-link:hover {
+  text-decoration: underline;
+  color: red;
 }
