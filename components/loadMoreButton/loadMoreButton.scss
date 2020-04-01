@@ -1,0 +1,37 @@
+.load-more-container {
+  text-align: center;
+
+  .load-more-button {
+    background: #6ECCDF;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: none;
+    width: 18%;
+    margin: 36px auto;
+    padding: 8px 16px;
+    
+    &:hover {
+      cursor: pointer;
+      background: #4dc6de;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Tablet
+@media only screen and (max-device-width: 768px) {
+ .load-more-container .load-more-button {
+    width: 28%;
+  }
+}
+
+// Phone screen
+@media only screen and (max-device-width: 480px) {
+  .load-more-container .load-more-button {
+    width: 48%;
+  }
+}

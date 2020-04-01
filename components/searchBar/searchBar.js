@@ -15,19 +15,22 @@ const SearchBar = props => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="search-bar">
-      <input
-        type="text"
-        className="search-input"
-        value={searchQuery}
-        onChange={e => setSearchQuery(e.target.value)}
-        placeholder="Search for topics, sources"
-      />
+    <div className="header-container">
+      <img src="logo.png" className="main-logo" />
+      <form onSubmit={handleSubmit} className="search-bar">
+        <input
+          type="text"
+          className="search-input"
+          value={searchQuery}
+          onChange={e => setSearchQuery(e.target.value)}
+          placeholder="Search for topics, sources"
+        />
 
-      <button type="submit" className="search-button">
-        <SearchIcon />
-      </button>
-    </form>
+        <button type="submit" className="search-button">
+          <SearchIcon />
+        </button>
+      </form>
+    </div>
   );
 };
 

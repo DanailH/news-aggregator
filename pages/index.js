@@ -6,6 +6,7 @@ import SectionHeader from '../components/sectionHeader/sectionHeader';
 import NewsList from '../components/newsList/newsList';
 import { getTopHeadlines, getSearchedHeadlines } from '../services/news';
 import SearchBar from '../components/searchBar/searchBar';
+import LoadMoreButton from '../components/loadMoreButton/loadMoreButton';
 
 const Home = props => {
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
@@ -23,12 +24,11 @@ const Home = props => {
       <Head>
         <title>The News Load</title>
       </Head>
-
+      
       <SearchBar searchNews={handleNewsSearch} />
-
       <SectionHeader text={searchQuery} />
-
       <NewsList news={headlines} />
+      <LoadMoreButton/>
     </Fragment>
   );
 };

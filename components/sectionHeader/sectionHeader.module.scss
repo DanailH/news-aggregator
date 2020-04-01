@@ -1,0 +1,10 @@
+.page-header {
+  padding: 2% 4%;
+}
+
+// Phone screen
+@media only screen and (max-device-width: 480px) {
+ .page-header {
+    padding: 6% 4%;
+  }
+}
