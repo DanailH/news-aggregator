@@ -21,7 +21,7 @@ const Home = props => {
   return (
     <Fragment>
       <Head>
-        <title>The News Loader</title>
+        <title>The News Load</title>
       </Head>
 
       <SearchBar searchNews={handleNewsSearch} />
