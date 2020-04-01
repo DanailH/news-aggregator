@@ -2,10 +2,10 @@ import { useState } from 'react';
 import propTypes from 'prop-types';
 import { Fragment } from 'react/cjs/react.production.min';
 import Head from 'next/head';
-import SectionHeader from '../components/sectionHeader';
-import NewsList from '../components/newsList';
+import SectionHeader from '../components/sectionHeader/sectionHeader';
+import NewsList from '../components/newsList/newsList';
 import { getTopHeadlines, getSearchedHeadlines } from '../services/news';
-import SearchBar from '../components/searchBar';
+import SearchBar from '../components/searchBar/searchBar';
 
 const Home = props => {
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
