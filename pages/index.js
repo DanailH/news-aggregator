@@ -18,7 +18,7 @@ const Home = props => {
     } else {
       const newsApiSearchedHeadlines = await getSearchedHeadlines(query);
 
-      setHeadlines(newsApiSearchedHeadlines.articles);
+      setHeadlines(newsApiSearchedHeadlines);
       setSearchQuery(query);
     }
   };
@@ -26,7 +26,7 @@ const Home = props => {
   const handleLoadTopHeadlines = async () => {
     const newsApiTopHeadlines = await getTopHeadlines();
 
-    setHeadlines(newsApiTopHeadlines.articles);
+    setHeadlines(newsApiTopHeadlines);
     setSearchQuery('top');
   };
 
@@ -50,7 +50,7 @@ Home.getInitialProps = async () => {
 
   return {
     searchQuery: 'top',
-    topHeadlines: newsApiTopHeadlines.articles
+    topHeadlines: newsApiTopHeadlines
   };
 };
 

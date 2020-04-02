@@ -14,14 +14,20 @@
 
 .url-container {
   flex: 1;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
 }
 
 .url-container img {
-  width: 152px;
+  max-width: 150px;
   height: auto;
-  border-radius: 10px;
-  background-position: 50% 50%;
-  background-size: cover;
+  zoom: 200%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .article-text {
