@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import propTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
+import LanguageIcon from '@material-ui/icons/Language';
+import SortIcon from '@material-ui/icons/Sort';
 import { sortOptions, languages } from '../../constants';
 import './searchBar.module.scss';
 
@@ -25,7 +27,7 @@ const SearchBar = props => {
   return (
     <div className="header-container">
       <img src="logo.png" className="main-logo" />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="search-form">
         <div className="search-bar">
           <input
             type="text"
@@ -39,41 +41,42 @@ const SearchBar = props => {
             <SearchIcon />
           </button>
         </div>
+        <div className="filter-bar">
+          <label>From date:</label>
+          <input
+            type="date"
+            value={fromDate}
+            onChange={e => setFromDate(e.target.value)}
+          />
 
-        <label>From date:</label>
-        <input
-          type="date"
-          value={fromDate}
-          onChange={e => setFromDate(e.target.value)}
-        />
+          <label>To date:</label>
+          <input
+            type="date"
+            value={toDate}
+            onChange={e => setToDate(e.target.value)}
+          />
 
-        <label>To date:</label>
-        <input
-          type="date"
-          value={toDate}
-          onChange={e => setToDate(e.target.value)}
-        />
+          <SortIcon/>
+          <select
+            value={sortBy}
+            onChange={e => setSortBy(e.target.value)}
+          >
+            {sortOptions.map((option, index) => (
+              <option key={index} value={option}>{option}</option>
+            ))}
+          </select>
 
-        <label>Sort by:</label>
-        <select
-          value={sortBy}
-          onChange={e => setSortBy(e.target.value)}
-        >
-          { sortOptions.map((option, index) => (
-            <option key={index} value={option}>{option}</option>
-          )) }
-        </select>
-
-        <label>Language:</label>
-        <select
-          value={language}
-          onChange={e => setLanguage(e.target.value)}
-        >
-          <option value=""></option>
-          { languages.map((language, index) => (
-            <option key={index} value={language}>{language}</option>
-          )) }
-        </select>
+          <LanguageIcon/>
+          <select
+            value={language}
+            onChange={e => setLanguage(e.target.value)}
+          >
+            <option value=""></option>
+            {languages.map((language, index) => (
+              <option key={index} value={language}>{language}</option>
+            ))}
+          </select>
+        </div>
       </form>
     </div>
   );

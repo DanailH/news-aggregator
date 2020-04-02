@@ -15,6 +15,9 @@
     height: 30px;
   }
 }
+.search-form {
+  width: 40%;
+}
 
 .search-bar {
   position: -webkit-sticky;
@@ -24,6 +27,9 @@
   display: flex;
   justify-content: space-between;
 
+  // &:focus {
+   // box-shadow: 0 7px 9px 0 rgba(55,56,60,0.1);
+  // }
 }
 
 .search-input {
@@ -47,11 +53,24 @@
   padding-right: 0.75rem;
 }
 
+.filter-bar {
+  display: none;
+  // display: flex;
+
+  .MuiSvgIcon-root {
+    padding-right: 4px;
+  }
+}
+
 // Phone screen
 @media only screen and (max-device-width: 480px) {
   .search-bar {
     width: 96%;
     margin-top: 8px;
+  }
+
+  .search-form {
+    width: 96%;
   }
 
   .header-container {

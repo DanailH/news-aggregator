@@ -8,7 +8,7 @@ const NewsList = props => {
         <li key={index} className="article-item">
           <div className="article-text">
             <div className="article-title">
-              <a href={article.url} target="_blank">{article.title}</a>
+              <a href={article.url} className="article-link" target="_blank" rel="noopener noreferrer">{article.title}</a>
             </div>
             <div className="article-details">
               {article.source.name}
