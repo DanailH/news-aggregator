@@ -13,7 +13,7 @@ const NewsList = props => {
             <div className="article-details">
               {article.source.name}
               <span>&#183;</span>
-              {article.publishedAt}
+              {new Date(article.publishedAt).toDateString()}
             </div>
           </div>
           <div className="url-container">
