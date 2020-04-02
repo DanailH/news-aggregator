@@ -2,18 +2,13 @@ import propTypes from 'prop-types';
 import './newsList.module.scss';
 
 const NewsList = props => {
-  const openArticle = url => {
-    const win = window.open(url, '_blank');
-    win.focus();
-  };
-
   return (
     <ul className="articles-container">
       { props.news.map((article, index) => (
-        <li key={index} className="article-item" onClick={() => openArticle(article.url)}>
+        <li key={index} className="article-item">
           <div className="article-text">
             <div className="article-title">
-              {article.title}
+              <a href={article.url} target="_blank">{article.title}</a>
             </div>
             <div className="article-details">
               {article.source.name}
