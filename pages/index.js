@@ -12,10 +12,21 @@ const Home = props => {
   const [headlines, setHeadlines] = useState(props.topHeadlines);
 
   const handleNewsSearch = async query => {
-    const newsApiSearchedHeadlines = await getSearchedHeadlines(query);
+    if(query === 'top') {
+      handleLoadTopHeadlines();
+    } else {
+      const newsApiSearchedHeadlines = await getSearchedHeadlines(query);
 
-    setHeadlines(newsApiSearchedHeadlines.articles);
-    setSearchQuery(query);
+      setHeadlines(newsApiSearchedHeadlines.articles);
+      setSearchQuery(query);
+    }
+  };
+
+  const handleLoadTopHeadlines = async () => {
+    const newsApiTopHeadlines = await getTopHeadlines();
+
+    setHeadlines(newsApiTopHeadlines.articles);
+    setSearchQuery('top');
   };
 
   return (
@@ -24,7 +35,7 @@ const Home = props => {
         <title>The News Load</title>
       </Head>
 
-      <SearchBar searchNews={handleNewsSearch} />
+      <SearchBar searchQuery={searchQuery} searchNews={handleNewsSearch} loadTopHeadlines={handleLoadTopHeadlines} />
 
       <SectionHeader text={searchQuery} />
 

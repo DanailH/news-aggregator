@@ -21,3 +21,9 @@ export const getSearchedHeadlines = async (query, fromDate = undefined, toDate =
 
   return data;
 };
+
+// TODO: search filters:
+//  - fromDate
+//  - toDate
+//  - sortBy
+//  - country
