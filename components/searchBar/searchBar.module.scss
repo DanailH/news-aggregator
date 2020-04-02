@@ -8,6 +8,7 @@
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
     /* Safari */
   position: sticky;
+  z-index: 1;
   top: 0px;
 
   .main-logo {
@@ -20,7 +21,6 @@
   border-radius: 25px;
   border: 1px solid #dbdbdb;
   background: #f6f6f6;
-  width: 35%;
   display: flex;
   justify-content: space-between;
 

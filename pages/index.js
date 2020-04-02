@@ -8,26 +8,17 @@ import { getTopHeadlines, getSearchedHeadlines } from '../services/news';
 import SearchBar from '../components/searchBar/searchBar';
 import LoadMoreButton from '../components/loadMoreButton/loadMoreButton';
 
+
 const Home = props => {
+  const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState(props.searchQuery);
   const [headlines, setHeadlines] = useState(props.topHeadlines);
 
-  const handleNewsSearch = async query => {
-    if(query === 'top') {
-      handleLoadTopHeadlines();
-    } else {
-      const newsApiSearchedHeadlines = await getSearchedHeadlines(query);
+  const handleNewsSearch = async (query, fromDate, toDate, sortBy, language) => {
+    const newsApiSearchedHeadlines = await getSearchedHeadlines(page, query, fromDate, toDate, sortBy, language);
 
-      setHeadlines(newsApiSearchedHeadlines);
-      setSearchQuery(query);
-    }
-  };
-
-  const handleLoadTopHeadlines = async () => {
-    const newsApiTopHeadlines = await getTopHeadlines();
-
-    setHeadlines(newsApiTopHeadlines);
-    setSearchQuery('top');
+    setHeadlines(newsApiSearchedHeadlines);
+    setSearchQuery(query);
   };
 
   return (
@@ -36,7 +27,7 @@ const Home = props => {
         <title>The News Load</title>
       </Head>
 
-      <SearchBar searchQuery={searchQuery} searchNews={handleNewsSearch} loadTopHeadlines={handleLoadTopHeadlines} />
+      <SearchBar searchNews={handleNewsSearch} />
 
       <SectionHeader text={searchQuery} />
       <NewsList news={headlines} />
@@ -49,7 +40,6 @@ Home.getInitialProps = async () => {
   const newsApiTopHeadlines = await getTopHeadlines();
 
   return {
-    searchQuery: 'top',
     topHeadlines: newsApiTopHeadlines
   };
 };
