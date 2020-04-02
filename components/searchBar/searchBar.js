@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Fragment } from 'react/cjs/react.production.min';
 import propTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
 import './searchBar.module.scss';
@@ -20,7 +19,8 @@ const SearchBar = props => {
   }
 
   return (
-    <Fragment>
+    <div className="header-container">
+      <img src="logo.png" className="main-logo" />
       <form onSubmit={handleSubmit} className="search-bar">
         <input
           type="text"
@@ -36,7 +36,7 @@ const SearchBar = props => {
       </form>
 
       <button onClick={props.loadTopHeadlines}>Back to Top Headlines</button>
-    </Fragment>
+    </div>
   );
 };
 

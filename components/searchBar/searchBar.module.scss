@@ -1,16 +1,29 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+    /* Safari */
+  position: sticky;
+  top: 0px;
+
+  .main-logo {
+    height: 30px;
+  }
+}
+
 .search-bar {
-  margin-top: 50px;
   position: -webkit-sticky;
   border-radius: 25px;
   border: 1px solid #dbdbdb;
   background: #f6f6f6;
-  max-width: 40%;
-  margin: 0 auto;
+  width: 35%;
   display: flex;
   justify-content: space-between;
-  /* Safari */
-  position: sticky;
-  top: 20px;
+
 }
 
 .search-input {
@@ -31,4 +44,17 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  padding-right: 0.75rem;
+}
+
+// Phone screen
+@media only screen and (max-device-width: 480px) {
+  .search-bar {
+    width: 96%;
+    margin-top: 8px;
+  }
+
+  .header-container {
+    flex-direction: column;
+  }
 }

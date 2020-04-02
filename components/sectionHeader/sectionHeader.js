@@ -1,8 +1,9 @@
 import propTypes from 'prop-types';
+import './sectionHeader.module.scss';
 
 const SectionHeader = props => {
   return (
-    <h1>Showing <i>{props.text}</i> headlines:</h1>
+    <h1 className="page-header">Showing <i>{props.text}</i> headlines:</h1>
   );
 };
 
