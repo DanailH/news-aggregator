@@ -17,7 +17,7 @@ const NewsList = props => {
             </div>
           </div>
           <div className="url-container">
-            <img src={article.urlToImage || '/noimage.jpg'} />
+            <img src={article.urlToImage || '/noimage.jpg'} alt="news-article-image"/>
           </div>
         </li>
       )) }

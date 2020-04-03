@@ -51,6 +51,18 @@ const Home = props => {
     <Fragment>
       <Head>
         <title>The News Load</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="keywords" content="news, today's news, top news, top news, trending news, what happen today, new from today, filtered news, personal news load, news load, thenewsload, newsload, world news, my news, current news, news today"/>
+        <meta name="description" content="The easiest way to search for any trending news both domestically and internationally" />
+        <meta name="title" content="TheNewsLoad | The trending news finder"/>
+        <meta property="og:title" content="TheNewsLoad | The trending news finder"/>
+        <meta property="og:url" content="https://www.thenewsload.com/"/>
+        <meta property="og:type" content="webapp"/>
+        <meta property="og:site_name" content="theNewsLoad"/>
+        <meta itemprop="name" content="TheNewsLoad | The trending news finder"/>
+        <meta itemprop="url" content="https://www.thenewsload.com/"/>
+        <meta itemprop="description" content="The easiest way to search for any trending news both domestically and internationally."/>
+
       </Head>
 
       <Layout>
