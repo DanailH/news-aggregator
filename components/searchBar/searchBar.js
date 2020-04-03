@@ -26,7 +26,7 @@ const SearchBar = props => {
 
   return (
     <div className="header-container">
-      <img src="logo.png" className="main-logo" />
+      <img src="logo.png" className="main-logo" alt="main-logo"/>
       <form onSubmit={handleSubmit} className="search-form">
         <div className="search-bar">
           <input
