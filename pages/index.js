@@ -7,6 +7,7 @@ import NewsList from '../components/newsList/newsList';
 import { getTopHeadlines, getSearchedHeadlines } from '../services/news';
 import SearchBar from '../components/searchBar/searchBar';
 import LoadMoreButton from '../components/loadMoreButton/loadMoreButton';
+import Footer from '../components/footer/footer';
 import Layout from '../components/layout/layout';
 import { sortOptions } from '../constants';
 
@@ -71,6 +72,7 @@ const Home = props => {
         <SectionHeader text={searchQuery} />
         <NewsList news={headlines} />
         <LoadMoreButton loadMoreArticles={handleLoadMoreActicles}/>
+        <Footer/>
       </Layout>
     </Fragment>
   );

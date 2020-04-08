@@ -2,7 +2,7 @@
   text-align: center;
 
   .load-more-button {
-    background: #6ECCDF;
+    background: #6194BC;
     color: #fff;
     font-size: 1.1rem;
     border-radius: 25px;
@@ -13,7 +13,7 @@
     
     &:hover {
       cursor: pointer;
-      background: #4dc6de;
+      box-shadow: 0 2px 12px rgba(0,0,0,.15);
     }
 
     &:focus {

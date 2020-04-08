@@ -1,0 +1,14 @@
+.footer-container {
+  padding: 16px;
+  background: #ececec;
+
+  .footer-link {
+    text-decoration: none;
+    color: #737373;
+    font-size: 0.8rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
