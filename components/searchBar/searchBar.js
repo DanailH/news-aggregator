@@ -2,10 +2,7 @@ import 'date-fns';
 import { useState } from 'react';
 import propTypes from 'prop-types';
 import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import SearchIcon from '@material-ui/icons/Search';
 import LanguageIcon from '@material-ui/icons/Language';
 import SortIcon from '@material-ui/icons/Sort';
@@ -19,8 +16,8 @@ import './searchBar.module.scss';
 
 const SearchBar = props => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [fromDate, setFromDate] = useState(new Date());
-  const [toDate, setToDate] = useState(new Date());
+  const [fromDate, setFromDate] = useState();
+  const [toDate, setToDate] = useState();
   const [sortBy, setSortBy] = useState(sortOptions[0]);
   const [language, setLanguage] = useState('');
   const [showFilter, setShowFilter] = useState(false)
@@ -31,7 +28,7 @@ const SearchBar = props => {
     if (searchQuery !== '') {
       const targetFromDate = fromDate ? new Date(fromDate) : undefined;
       const targetToDate = toDate ? new Date(toDate) : undefined;
-
+      console.log(searchQuery, targetFromDate, targetToDate, sortBy, language)
       props.searchNews(searchQuery, targetFromDate, targetToDate, sortBy, language);
     }
   }
@@ -150,7 +147,6 @@ const SearchBar = props => {
             {filterLanguage()}
           </div>
         </div>}
-
       </form>
     </div>
   );

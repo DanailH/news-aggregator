@@ -1,7 +1,6 @@
-import propTypes from 'prop-types';
 import './footer.module.scss';
 
-const Footer = props => {
+const Footer = () => {
   return (
     <footer className="footer-container">
       <a href="https://newsapi.org" className="footer-link" target="_blank" rel="noopener noreferrer">
