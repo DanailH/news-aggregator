@@ -23,7 +23,7 @@ const SearchBar = props => {
   const [fromDate, setFromDate] = useState(oneMonthAgo);
   const [toDate, setToDate] = useState(today);
   const [sortBy, setSortBy] = useState(sortOptions[0]);
-  const [language, setLanguage] = useState('');
+  const [language, setLanguage] = useState('en');
   const [showFilter, setShowFilter] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -110,7 +110,8 @@ const SearchBar = props => {
           <MenuItem value=''></MenuItem>
           {languages.map((language, index) => (
             <MenuItem
-              key={index} value={language}
+              key={index}
+              value={language}
             >
               {language}
             </MenuItem>
@@ -154,6 +155,7 @@ const SearchBar = props => {
           {renderDates()}
           <div className="sort-container">
             {renderSortFilter()}
+
             {filterLanguage()}
           </div>
         </div>}
