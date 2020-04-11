@@ -15,12 +15,17 @@ import { sortOptions, languages } from '../../constants';
 import './searchBar.module.scss';
 
 const SearchBar = props => {
+  const today = new Date();
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(today.getMonth() - 1);
+
   const [searchQuery, setSearchQuery] = useState('');
-  const [fromDate, setFromDate] = useState();
-  const [toDate, setToDate] = useState();
+  const [fromDate, setFromDate] = useState(oneMonthAgo);
+  const [toDate, setToDate] = useState(today);
   const [sortBy, setSortBy] = useState(sortOptions[0]);
   const [language, setLanguage] = useState('');
-  const [showFilter, setShowFilter] = useState(false)
+  const [showFilter, setShowFilter] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -28,8 +33,11 @@ const SearchBar = props => {
     if (searchQuery !== '') {
       const targetFromDate = fromDate ? new Date(fromDate) : undefined;
       const targetToDate = toDate ? new Date(toDate) : undefined;
-      console.log(searchQuery, targetFromDate, targetToDate, sortBy, language)
+
       props.searchNews(searchQuery, targetFromDate, targetToDate, sortBy, language);
+      setErrorMsg('');
+    } else {
+      setErrorMsg('Search field is empty');
     }
   }
 
@@ -127,7 +135,7 @@ const SearchBar = props => {
               className="search-input"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Search for topics, sources"
+              placeholder="Show me articles for..."
             />
 
             <button type="submit" className="search-button">
@@ -138,6 +146,8 @@ const SearchBar = props => {
             <TuneIcon />
           </IconButton>
         </div>
+
+        <div className="error-msg">{errorMsg}</div>
 
         {showFilter && <div className="filter-bar">
         <div className="filter-sub-header">Add your filters:</div>

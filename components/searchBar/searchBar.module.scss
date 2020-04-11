@@ -11,7 +11,6 @@
   top: 0px;
   background: #ececec;
 
-
   .sub-header {
     font-size: 0.9rem;
     font-weight: 200;
@@ -22,6 +21,7 @@
     height: 30px;
   }
 }
+
 .search-form {
   width: 40%;
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -31,6 +31,14 @@
     padding-left: 4px;
     font-size: 1.3rem;
     font-style: italic;
+  }
+
+  .error-msg {
+    padding-top: 12px;
+    color: red;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding-left: 24px;
   }
 }
 
@@ -43,11 +51,11 @@
   display: flex;
   justify-content: space-between;
 
- 
+
 }
 
 .filter-button {
-  margin-left: 8px !important; 
+  margin-left: 8px !important;
   color: #6194BC !important;
 }
 
@@ -91,7 +99,7 @@
   .date-container {
     display: flex;
 
-   
+
 
     .MuiInput-root {
       margin-right: 6px;

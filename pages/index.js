@@ -22,7 +22,7 @@ const Home = props => {
   const [language, setLanguage] = useState('');
 
   const handleNewsSearch = async (query, fromDate, toDate, sortBy, language) => {
-    const newsApiSearchedHeadlines = await getSearchedHeadlines(page, query, fromDate, toDate, sortBy, language);
+    const newsApiSearchedHeadlines = await getSearchedHeadlines(1, query, fromDate, toDate, sortBy, language);
 
     setHeadlines(newsApiSearchedHeadlines);
     setSearchQuery(query);
@@ -30,6 +30,7 @@ const Home = props => {
     setToDate(toDate);
     setSortBy(sortBy);
     setLanguage(language);
+    setPage(1);
   };
 
   const handleLoadMoreActicles = async () => {

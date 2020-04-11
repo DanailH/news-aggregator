@@ -1,9 +1,22 @@
+.desktop-container {
+  display: block;
+}
+
+.article-containers-wrapper {
+  display: flex;
+}
+
+.mobile-container {
+  display: none;
+}
+
 .articles-container {
-  list-style-type: none;
-  padding: 0 50px;
-  columns: 2;
-  column-fill: auto;
-  column-gap: 20px;
+  padding: 0 22px 0 45px;
+  width: 50%;
+
+  &:last-child {
+    padding: 0 45px 0 22px;
+  }
 }
 
 .article-item {
@@ -64,8 +77,16 @@
 
 // Tablet
 @media only screen and (max-device-width: 768px) {
+  .desktop-container {
+    display: none;
+  }
+
+  .mobile-container {
+    display: block;
+  }
+
   .articles-container {
-    columns: 1;
+    width: 100%;
   }
 }
 

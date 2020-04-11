@@ -8,7 +8,9 @@ export const getTopHeadlines = async (
   const res = await fetch(`${newsApi}/top-headlines?language=${language}&pageSize=10&page=${page}&apiKey=${newsApiKey}`);
   const data = await res.json();
 
-  return data.articles.filter(article => (article.title && article.title !== ''));
+  return data.articles
+    .filter((article, index) => data.articles.indexOf(article) === index)
+    .filter(article => (article.title && article.title !== ''));
 };
 
 export const getSearchedHeadlines = async (
@@ -36,5 +38,7 @@ export const getSearchedHeadlines = async (
   const res = await fetch(`${newsApi}/everything?qInTitle=${query}&from=${fromDate.toISOString()}&to=${toDate.toISOString()}&soryBy=${sortBy}&pageSize=10&page=${page}&language=${language}&apiKey=${newsApiKey}`);
   const data = await res.json();
 
-  return data.articles.filter(article => (article.title && article.title !== ''));
+  return data.articles
+    .filter((article, index) => data.articles.indexOf(article) === index)
+    .filter(article => (article.title && article.title !== ''));
 };
